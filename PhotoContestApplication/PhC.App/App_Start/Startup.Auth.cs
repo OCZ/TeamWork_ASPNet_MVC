@@ -57,15 +57,15 @@ namespace PhC.App
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: "1481242078871932",
+              appSecret: "d1d91110bc1aba3a38afb8e436f4ee99");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "865435690172-95kr8e8kasnhn3nvnuedoh9nu3f3aldl.apps.googleusercontent.com",
+                ClientSecret = "ahof61Qw-FrIsQy2RBFi9q9E"
+            });
         }
     }
 }
