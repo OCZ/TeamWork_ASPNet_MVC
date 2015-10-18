@@ -11,11 +11,13 @@
         public ContestEntity()
         {
             this.IsWinner = false;
-            this.WinningPlase = null;
+            this.WinningPlace = null;
             this._votes = new HashSet<Vote>();
         }
 
+        [Key]
         public int Id { get; set; }
+        
         [Required]
         public string Title { get; set; }
         
@@ -24,7 +26,6 @@
         
         [Required]
         public string PhotoUrl { get; set; }
-        
         
         [Required]
         public string AuthorId { get; set; }
@@ -37,21 +38,20 @@
         public int? WonContestId { get; set; }
         public virtual Contest WonContest { get; set; }
 
-        public virtual ICollection<Vote> Votes 
+        public bool IsWinner { get; private set; }
+
+        public int? WinningPlace { get; private set; }
+
+        public virtual ICollection<Vote> Votes
         {
             get { return this._votes; }
             set { this._votes = value; }
         }
 
-        public bool IsWinner { get; private set; }
-
-        public int? WinningPlase { get; private set; }
-
-
         public void Win(int? winingPlace = null )
         {
             this.IsWinner = true;
-            this.WinningPlase = winingPlace;
+            this.WinningPlace = winingPlace;
         }
     }
 }
