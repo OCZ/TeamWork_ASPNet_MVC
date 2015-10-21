@@ -11,7 +11,7 @@
 
         private ICollection<Contest> _contestsCreated;
         private ICollection<Contest> _contestsParticipated;
-        private ICollection<ContestEntity> _contestEntities;
+        private ICollection<ContestEntry> _contestEntities;
         private ICollection<Vote> _votes;
         private ICollection<VotingStrategy> _votingStrategiesCommette;
         private ICollection<ParticipationStrategy> _participationStrategies;
@@ -21,7 +21,7 @@
         {
             this._contestsParticipated = new HashSet<Contest>();
             this._contestsCreated = new HashSet<Contest>();
-            this._contestEntities = new HashSet<ContestEntity>();
+            this._contestEntities = new HashSet<ContestEntry>();
             this._votes = new HashSet<Vote>();
             this._votingStrategiesCommette = new HashSet<VotingStrategy>();
             this._participationStrategies = new HashSet<ParticipationStrategy>();
@@ -35,7 +35,7 @@
         }
 
         
-        public virtual ICollection<ContestEntity> ContestEntities
+        public virtual ICollection<ContestEntry> ContestEntities
         {
             get { return this._contestEntities; }
             set { this._contestEntities = value; }

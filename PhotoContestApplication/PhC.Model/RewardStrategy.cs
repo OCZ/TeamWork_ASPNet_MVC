@@ -5,13 +5,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Enums;
 
-    public class RewardStrategy : IContestStrategy<TypeSingleMultiple>
+    public class RewardStrategy : IContestStrategy<RankingType>
     {
         private ICollection<Prize> _prizes;
-        public RewardStrategy(TypeSingleMultiple type)
+        public RewardStrategy(RankingType type)
         {
             this.Type = type;
-            if (type == TypeSingleMultiple.Multiple)
+            if (type == RankingType.Multiple)
             {
                 this._prizes = new HashSet<Prize>();
             }
@@ -22,7 +22,7 @@
 
         public virtual Contest Contest { get; set; }
         
-        public TypeSingleMultiple Type { get; set; }
+        public RankingType Type { get; set; }
         
         public virtual ICollection<Prize> Prizes 
         {

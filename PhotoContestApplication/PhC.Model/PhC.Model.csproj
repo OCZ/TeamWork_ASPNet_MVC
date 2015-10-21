@@ -57,15 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contest.cs" />
-    <Compile Include="ContestEntity.cs" />
+    <Compile Include="ContestEntry.cs" />
     <Compile Include="DeadlineStrategy.cs" />
-    <Compile Include="Enums\TypeSingleMultiple.cs" />
-    <Compile Include="Enums\TypeTimeCount.cs" />
+    <Compile Include="Enums\RankingType.cs" />
+    <Compile Include="Enums\DeadlineType.cs" />
     <Compile Include="IContestStrategy.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="ParticipationStrategy.cs" />
     <Compile Include="Prize.cs" />
     <Compile Include="RewardStrategy.cs" />
-    <Compile Include="Enums\TypeOpenClose.cs" />
+    <Compile Include="Enums\EntryType.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vote.cs" />

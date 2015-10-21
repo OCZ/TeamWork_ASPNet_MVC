@@ -5,13 +5,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Enums;
 
-    public class VotingStrategy: IContestStrategy<TypeOpenClose>
+    public class VotingStrategy: IContestStrategy<EntryType>
     {
         private ICollection<User> _commettee;
 
-        public VotingStrategy(TypeOpenClose type)
+        public VotingStrategy(EntryType type)
         {
-            if (type == TypeOpenClose.Close)
+            if (type == EntryType.Close)
             {
                 this._commettee = new HashSet<User>();    
             }
@@ -21,7 +21,7 @@
         public int Id { get; set; }
 
         [Required]
-        public TypeOpenClose Type { get; set; }
+        public EntryType Type { get; set; }
 
         public virtual Contest Contest { get; set; }
 

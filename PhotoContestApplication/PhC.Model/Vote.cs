@@ -12,7 +12,7 @@
 
         //VOTED FOR
         public int ContestEntityId { get; set; }
-        public virtual ContestEntity ContestEntity { get; set; }
+        public virtual ContestEntry ContestEntry { get; set; }
 
     }
 }
