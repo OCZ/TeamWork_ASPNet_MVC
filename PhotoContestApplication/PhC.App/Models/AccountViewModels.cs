@@ -6,6 +6,9 @@ namespace PhC.App.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -49,9 +52,8 @@ namespace PhC.App.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +66,10 @@ namespace PhC.App.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
