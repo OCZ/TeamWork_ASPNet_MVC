@@ -15,6 +15,7 @@
         private ICollection<Vote> _votes;
         private ICollection<VotingStrategy> _votingStrategiesCommette;
         private ICollection<ParticipationStrategy> _participationStrategies;
+		private ICollection<Notification> _notifications;
 
 
         public User()
@@ -25,6 +26,7 @@
             this._votes = new HashSet<Vote>();
             this._votingStrategiesCommette = new HashSet<VotingStrategy>();
             this._participationStrategies = new HashSet<ParticipationStrategy>();
+			this._notifications = HashSet<Notification>();
         }
 
         
@@ -69,6 +71,11 @@
             set { this._participationStrategies = value; }
         } 
       
+		private virtual ICollection<Notification> Notifications() 
+		{
+			get { return this._notifications; }
+			set {this._notifications = value;}
+		}
 
 
 
