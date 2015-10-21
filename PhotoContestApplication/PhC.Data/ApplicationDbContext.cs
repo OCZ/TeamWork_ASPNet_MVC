@@ -19,7 +19,7 @@
         }
 
         public virtual IDbSet<Contest> Contests { get; set; }
-        public virtual IDbSet<ContestEntity> ContestEntities { get; set; }
+        public virtual IDbSet<ContestEntry> ContestEntries { get; set; }
         public virtual IDbSet<Vote> Votes { get; set; }
         public virtual IDbSet<RewardStrategy> RewardStrategies { get; set; }
         public virtual IDbSet<Prize> Prizes { get; set; }
@@ -30,9 +30,9 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Contest>().HasMany(c => c.ContestEntities).WithRequired(ce => ce.Contest).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Contest>().HasMany(c => c.ContestEntries).WithRequired(ce => ce.Contest).WillCascadeOnDelete(false);
             //    modelBuilder.Entity<Contest>().HasMany(c => c.Winners).WithRequired(w => w.WonContest).WillCascadeOnDelete(false);
-            modelBuilder.Entity<ContestEntity>().HasOptional(ce => ce.WonContest);
+            modelBuilder.Entity<ContestEntry>().HasOptional(ce => ce.WonContest);
             modelBuilder.Entity<User>().HasMany(u => u.ContestsCreated).WithRequired(c => c.Creator).WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Contest>()

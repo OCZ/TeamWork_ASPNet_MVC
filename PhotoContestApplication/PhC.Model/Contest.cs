@@ -78,7 +78,7 @@
         public virtual DeadlineStrategy DeadlineStrategy
         {
             get { return this._deadlineStrategy; }
-            set { this.DeadlineStrategy = value; }
+            set { this._deadlineStrategy = value; }
         }
 
         // WINNERS

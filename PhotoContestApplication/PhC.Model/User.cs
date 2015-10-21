@@ -11,7 +11,7 @@
 
         private ICollection<Contest> _contestsCreated;
         private ICollection<Contest> _contestsParticipated;
-        private ICollection<ContestEntry> _contestEntities;
+        private ICollection<ContestEntry> _contestEntries;
         private ICollection<Vote> _votes;
         private ICollection<VotingStrategy> _votingStrategiesCommette;
         private ICollection<ParticipationStrategy> _participationStrategies;
@@ -22,11 +22,11 @@
         {
             this._contestsParticipated = new HashSet<Contest>();
             this._contestsCreated = new HashSet<Contest>();
-            this._contestEntities = new HashSet<ContestEntry>();
+            this._contestEntries = new HashSet<ContestEntry>();
             this._votes = new HashSet<Vote>();
             this._votingStrategiesCommette = new HashSet<VotingStrategy>();
             this._participationStrategies = new HashSet<ParticipationStrategy>();
-			this._notifications = HashSet<Notification>();
+			this._notifications = new HashSet<Notification>();
         }
 
         
@@ -37,10 +37,10 @@
         }
 
         
-        public virtual ICollection<ContestEntry> ContestEntities
+        public virtual ICollection<ContestEntry> ContestEntries
         {
-            get { return this._contestEntities; }
-            set { this._contestEntities = value; }
+            get { return this._contestEntries; }
+            set { this._contestEntries = value; }
         }
         
         //votes given by the user
@@ -71,7 +71,7 @@
             set { this._participationStrategies = value; }
         } 
       
-		private virtual ICollection<Notification> Notifications() 
+		public virtual ICollection<Notification> Notifications 
 		{
 			get { return this._notifications; }
 			set {this._notifications = value;}

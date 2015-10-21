@@ -33,11 +33,11 @@
         }
 
         // CONTEST ENTITIES
-        public IRepository<ContestEntity> ContestEntities
+        public IRepository<ContestEntry> ContestEntities
         {
             get
             {
-                return this.GetRepository<ContestEntity>();
+                return this.GetRepository<ContestEntry>();
             }
         }
 

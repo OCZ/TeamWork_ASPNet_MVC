@@ -11,7 +11,7 @@
         public virtual User Author { get; set; }
 
         //VOTED FOR
-        public int ContestEntityId { get; set; }
+        public int ContestEntryId { get; set; }
         public virtual ContestEntry ContestEntry { get; set; }
 
     }

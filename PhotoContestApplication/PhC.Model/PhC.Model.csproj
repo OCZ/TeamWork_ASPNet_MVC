@@ -62,7 +62,7 @@
     <Compile Include="Enums\RankingType.cs" />
     <Compile Include="Enums\DeadlineType.cs" />
     <Compile Include="IContestStrategy.cs" />
-    <Compile Include="Message.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="ParticipationStrategy.cs" />
     <Compile Include="Prize.cs" />
     <Compile Include="RewardStrategy.cs" />

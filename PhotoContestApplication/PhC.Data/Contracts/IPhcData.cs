@@ -6,7 +6,7 @@
     {
         IRepository<Contest> Contests { get; }
 
-        IRepository<ContestEntity> ContestEntities { get; }
+        IRepository<ContestEntry> ContestEntities { get; }
 
         IRepository<Vote> Votes { get; }
 
