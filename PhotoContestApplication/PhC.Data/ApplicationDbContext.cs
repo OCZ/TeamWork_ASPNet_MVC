@@ -9,7 +9,7 @@
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", false)
+            : base("PhCConnection", false)
         {
         }
 

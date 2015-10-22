@@ -8,6 +8,7 @@
     using System.Web.Optimization;
     using System.Web.Routing;
     using System.Data.Entity;
+    using App_Start;
     using Data;
     using Data.Migrations;
 
@@ -16,6 +17,7 @@
         protected void Application_Start()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            MapperConfig.ConfigureMappings();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
