@@ -11,6 +11,7 @@ namespace PhC.App.Controllers
     using Microsoft.Owin.Security;
     using Models;
     using Model;
+    using Models.ViewModels;
 
     [Authorize]
     public class AccountController : Controller

@@ -59,6 +59,7 @@
     <Compile Include="Contest.cs" />
     <Compile Include="ContestEntry.cs" />
     <Compile Include="DeadlineStrategy.cs" />
+    <Compile Include="Enums\ContestState.cs" />
     <Compile Include="Enums\RankingType.cs" />
     <Compile Include="Enums\DeadlineType.cs" />
     <Compile Include="IContestStrategy.cs" />

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,7 +10,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,22 +22,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Profile", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Manage Own Contests", "Contact", "Home")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Active Contests", "Index", "Home", routeValues: new { type = "active"}, htmlAttributes: null)</li>
-                        <li>@Html.ActionLink("Past Contests", "Index", "Home", routeValues: new { type = "past" }, htmlAttributes: null)</li>
-                    }
-                    @if (this.User.IsInRole("Admin"))
-                    {
-                        <li class="active">@Html.ActionLink("To Administration Panel", "Index", "Home", routeValues: new { area = "Admin" }, htmlAttributes: null)</li>
-                    }
+                    <li>@Html.ActionLink("Manage Contests", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Manage Users", "Contact", "Home")</li>
+                    <li class="active">@Html.ActionLink("To Application Panel", "Index", "Home", routeValues: new { area = "" }, htmlAttributes: null)</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

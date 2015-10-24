@@ -4,7 +4,7 @@
     using App.Controllers;
     using Data;
 
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class BaseAdminController : BaseController
     {
         

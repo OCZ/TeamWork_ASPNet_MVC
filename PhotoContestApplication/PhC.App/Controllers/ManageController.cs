@@ -10,6 +10,8 @@ using PhC.App.Models;
 
 namespace PhC.App.Controllers
 {
+    using Models.ViewModels;
+
     [Authorize]
     public class ManageController : Controller
     {

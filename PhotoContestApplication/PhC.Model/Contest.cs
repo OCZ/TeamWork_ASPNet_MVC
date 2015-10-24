@@ -1,5 +1,6 @@
 ﻿namespace PhC.Model
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Enums;
@@ -43,6 +44,14 @@
         // DESCRIPTION
         [Required]
         public string Description { get; set; }
+
+        // STATE
+        [Required]
+        public ContestState State { get; set; }
+
+        //DATE CREATED
+        [Required]
+        public DateTime CreatedOn { get; set; }
 
         // CREATOR
         [Required]
