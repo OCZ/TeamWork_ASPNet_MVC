@@ -16,6 +16,6 @@
         [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
-        public int Entries { get; set; }
+        public int EntriesCount { get; set; }
     }
 }

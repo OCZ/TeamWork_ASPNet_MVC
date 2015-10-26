@@ -28,8 +28,8 @@
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Active Contests", "Index", "Home", routeValues: new { type = "active"}, htmlAttributes: null)</li>
-                        <li>@Html.ActionLink("Past Contests", "Index", "Home", routeValues: new { type = "past" }, htmlAttributes: null)</li>
+                        <li>@Html.ActionLink("Active Contests", "Index", "Home", routeValues: null, htmlAttributes: null)</li>
+                        <li>@Html.ActionLink("Past Contests", "PastContest", "Home", routeValues: null, htmlAttributes: null)</li>
                     }
                     @if (this.User.IsInRole("Admin"))
                     {

@@ -9,24 +9,14 @@
 
     public class HomeController : BaseController
     {
-        public ActionResult Index(int? page, string type)
+        public ActionResult Index()
         {
-            IQueryable<Contest> contests = this.Data.Contests.All();
-            IQueryable<ContestConciseViewModel> resultContests = null;
-            int pageSize = 5;
-            int pageNumber = page == null ? 1 : int.Parse(page.ToString());
-            pageNumber = pageNumber < 1 ? 1 : pageNumber;
-            int skips = (pageNumber - 1) * pageSize;
+            return View(GetContestsLIst("active"));
+        }
 
-            ViewBag.pageNumber = pageNumber;
-            ViewBag.type = type;
-
-            contests = type == "past" ? contests.Where(c => c.State != ContestState.Active) : contests.Where(c => c.State == ContestState.Active);
-
-			resultContests = contests.OrderByDescending(c => c.CreatedOn).Skip(skips).Take(pageSize).ProjectTo<ContestConciseViewModel>();
-            
-
-            return View(resultContests);
+        public ActionResult PastContest()
+        {
+            return View(GetContestsLIst("past"));
         }
 
         public ActionResult About()
@@ -41,6 +31,15 @@
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [NonAction]
+        public IQueryable<ContestConciseViewModel> GetContestsLIst(string type)
+        {
+            IQueryable<Contest> contests = this.Data.Contests.All();
+            contests = type == "past" ? contests.Where(c => c.State != ContestState.Active) : contests.Where(c => c.State == ContestState.Active);  
+            IQueryable<ContestConciseViewModel> resultContests = contests.OrderByDescending(c => c.CreatedOn).ProjectTo<ContestConciseViewModel>();
+            return resultContests;
         }
     }
 }

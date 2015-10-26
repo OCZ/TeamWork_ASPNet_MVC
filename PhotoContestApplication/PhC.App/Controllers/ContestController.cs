@@ -1,5 +1,6 @@
 ﻿namespace PhC.App.Controllers
 {
+    using System.Net;
     using System.Web.Mvc;
     using AutoMapper;
     using Model;
@@ -7,10 +8,11 @@
 
     public class ContestController : BaseController
     {
+        // GET: Contests/Details/1
         public ActionResult Details(int id)
         {
-            var post = this.Data.Contests.Find(id);
-            if (post == null)
+            var contest = this.Data.Contests.Find(id);
+            if (contest == null)
             {
                 return this.HttpNotFound();
             }
@@ -19,8 +21,8 @@
             return View();
         }
 
-
-
+       
+       
         public ActionResult NewContest()
         {
             var contest = new Contest();
